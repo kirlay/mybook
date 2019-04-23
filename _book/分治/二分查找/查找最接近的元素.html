@@ -1,0 +1,459 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>查找最接近的元素 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../dp/" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../part2/">
+            
+                <a href="../../part2/">
+            
+                    
+                    分治策略
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    二分查找
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1.1" data-path="查找最接近的元素.html">
+            
+                <a href="查找最接近的元素.html">
+            
+                    
+                    查找最接近的元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../dp/">
+            
+                <a href="../../dp/">
+            
+                    
+                    动态规划
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" >
+            
+                <span>
+            
+                    
+                    最长不降子序列
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../dp/最长不降子序列/最长不降子序列.html">
+            
+                <a href="../../dp/最长不降子序列/最长不降子序列.html">
+            
+                    
+                    最长不降子序列
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../part1/gitbook.html">
+            
+                <a href="../../part1/gitbook.html">
+            
+                    
+                    GitBook is nice
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >查找最接近的元素</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="1240&#xFF1A;&#x67E5;&#x627E;&#x6700;&#x63A5;&#x8FD1;&#x7684;&#x5143;&#x7D20;">1240&#xFF1A;&#x67E5;&#x627E;&#x6700;&#x63A5;&#x8FD1;&#x7684;&#x5143;&#x7D20;</h3>
+<p><strong>&#x3010;&#x9898;&#x76EE;&#x63CF;&#x8FF0;&#x3011;</strong>
+&#x5728;&#x4E00;&#x4E2A;&#x975E;&#x964D;&#x5E8F;&#x5217;&#x4E2D;&#xFF0C;&#x67E5;&#x627E;&#x4E0E;&#x7ED9;&#x5B9A;&#x503C;&#x6700;&#x63A5;&#x8FD1;&#x7684;&#x5143;&#x7D20;&#x3002;</p>
+<p><strong>&#x3010;&#x8F93;&#x5165;&#x3011;</strong>
+&#x7B2C;&#x4E00;&#x884C;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x6574;&#x6570;n&#xFF0C;&#x4E3A;&#x975E;&#x964D;&#x5E8F;&#x5217;&#x957F;&#x5EA6;&#x3002;1 &#x2264; n &#x2264; 100000&#x3002;</p>
+<p>&#x7B2C;&#x4E8C;&#x884C;&#x5305;&#x542B;n&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x4E3A;&#x975E;&#x964D;&#x5E8F;&#x5217;&#x5404;&#x5143;&#x7D20;&#x3002;&#x6240;&#x6709;&#x5143;&#x7D20;&#x7684;&#x5927;&#x5C0F;&#x5747;&#x5728;0-1,000,000,000&#x4E4B;&#x95F4;&#x3002;</p>
+<p>&#x7B2C;&#x4E09;&#x884C;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x6574;&#x6570;m&#xFF0C;&#x4E3A;&#x8981;&#x8BE2;&#x95EE;&#x7684;&#x7ED9;&#x5B9A;&#x503C;&#x4E2A;&#x6570;&#x3002;1 &#x2264; m &#x2264; 10000&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;m&#x884C;&#xFF0C;&#x6BCF;&#x884C;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x4E3A;&#x8981;&#x8BE2;&#x95EE;&#x6700;&#x63A5;&#x8FD1;&#x5143;&#x7D20;&#x7684;&#x7ED9;&#x5B9A;&#x503C;&#x3002;&#x6240;&#x6709;&#x7ED9;&#x5B9A;&#x503C;&#x7684;&#x5927;&#x5C0F;&#x5747;&#x5728;0-1,000,000,000&#x4E4B;&#x95F4;&#x3002;</p>
+<p><strong>&#x3010;&#x8F93;&#x51FA;&#x3011;</strong>
+m&#x884C;&#xFF0C;&#x6BCF;&#x884C;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x4E3A;&#x6700;&#x63A5;&#x8FD1;&#x76F8;&#x5E94;&#x7ED9;&#x5B9A;&#x503C;&#x7684;&#x5143;&#x7D20;&#x503C;&#xFF0C;&#x4FDD;&#x6301;&#x8F93;&#x5165;&#x987A;&#x5E8F;&#x3002;&#x82E5;&#x6709;&#x591A;&#x4E2A;&#x503C;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#xFF0C;&#x8F93;&#x51FA;&#x6700;&#x5C0F;&#x7684;&#x4E00;&#x4E2A;&#x3002;</p>
+<p><strong>&#x3010;&#x8F93;&#x5165;&#x6837;&#x4F8B;&#x3011;</strong>
+3
+2 5 8
+2
+10
+5
+<strong>&#x3010;&#x8F93;&#x51FA;&#x6837;&#x4F8B;&#x3011;</strong>
+8
+5
+<strong>&#x3010;&#x6765;&#x6E90;&#x3011;</strong></p>
+<p><a href="http://ybt.ssoier.cn:8088/problem_show.php?pid=1240" target="_blank">http://ybt.ssoier.cn:8088/problem_show.php?pid=1240</a></p>
+<h3 id="&#x601D;&#x8DEF;">&#x601D;&#x8DEF;</h3>
+<p>&#x4E8C;&#x5206;&#x67E5;&#x627E;&#xFF1A;&#x534A;&#x95ED;&#x534A;&#x5F00;&#x533A;&#x95F4;&#x6216;&#x8005;&#x534A;&#x5F00;&#x534A;&#x95ED;&#x533A;&#x95F4;&#x67E5;&#x8BE2;</p>
+<p>&#x5982;&#x679C;&#x5F85;&#x67E5;&#x8BE2;&#x7684;&#x533A;&#x95F4;&#x6709;1 1 1 1 1 &#xFF0C;&#x8981;&#x67E5;&#x8BE2;1&#xFF0C;&#x7528;&#x534A;&#x95ED;&#x534A;&#x5F00;&#x533A;&#x95F4;&#xFF0C;&#x67E5;&#x8BE2;&#x5230;&#x7B2C;5&#x4E2A;1&#xFF1B;&#x5982;&#x679C;&#x7528;&#x534A;&#x5F00;&#x534A;&#x95ED;&#x533A;&#x95F4;&#xFF0C;&#x67E5;&#x8BE2;&#x5230;&#x7B2C;1&#x4E2A;1</p>
+<p>&#x534A;&#x95ED;&#x534A;&#x5F00;&#x533A;&#x95F4;&#xFF1A;&#x56E0;&#x4E3A;right&#x91CC;&#x9762;&#x4E0D;&#x5B58;&#x5728; <strong>&#x7B54;&#x6848;</strong></p>
+<pre><code class="lang-c++"><span class="hljs-keyword">if</span>(a[mid]&gt;x) right=mid;
+</code></pre>
+<p>&#x534A;&#x5F00;&#x534A;&#x95ED;&#x533A;&#x95F4;&#xFF1A;&#x56E0;&#x4E3A;left&#x91CC;&#x9762;&#x4E0D;&#x5B58;&#x5728; <strong>&#x7B54;&#x6848;</strong></p>
+<pre><code class="lang-c++"><span class="hljs-keyword">if</span>(a[mid]&lt;x) left=mid;
+</code></pre>
+<h3 id="&#x6E90;&#x7801;">&#x6E90;&#x7801;</h3>
+<p><strong>&#x534A;&#x95ED;&#x534A;&#x5F00;&#x533A;&#x95F4;&#x67E5;&#x8BE2;</strong></p>
+<pre><code class="lang-c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;cstdio&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-keyword">int</span> n,m,x;
+<span class="hljs-keyword">int</span> a[<span class="hljs-number">1000005</span>];
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">bi_find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> left,<span class="hljs-keyword">int</span> right)</span>
+</span>{
+    <span class="hljs-keyword">int</span> ans=<span class="hljs-number">0</span>;
+    <span class="hljs-keyword">int</span> mid;
+    <span class="hljs-keyword">while</span>(right-left&gt;<span class="hljs-number">1</span>)
+    {
+        mid=(left+right)/<span class="hljs-number">2</span>;
+        <span class="hljs-keyword">if</span>(a[mid]&gt;x) right=mid;
+        <span class="hljs-keyword">else</span> left=mid;
+    }
+    ans=a[left];
+    <span class="hljs-keyword">if</span>(x-ans&gt;a[left+<span class="hljs-number">1</span>]-x) ans=a[left+<span class="hljs-number">1</span>];
+    <span class="hljs-keyword">return</span> ans;
+}
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;n);
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++)
+    {
+        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;a[i]);
+    }
+    a[<span class="hljs-number">0</span>]=<span class="hljs-number">-1000000000</span>;
+    a[n+<span class="hljs-number">1</span>]=<span class="hljs-number">2100000000</span>;
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;m);
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=m;i++)
+    {
+        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;x);
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>,bi_find(<span class="hljs-number">1</span>,n+<span class="hljs-number">1</span>));
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<hr>
+<p><strong>&#x534A;&#x5F00;&#x534A;&#x95ED;&#x533A;&#x95F4;&#x67E5;&#x8BE2;</strong></p>
+<pre><code class="lang-c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;cstdio&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-keyword">int</span> n,m,x;
+<span class="hljs-keyword">int</span> a[<span class="hljs-number">100000</span>],ans[<span class="hljs-number">10000</span>];
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">bf</span><span class="hljs-params">(<span class="hljs-keyword">int</span> l,<span class="hljs-keyword">int</span> r)</span>
+</span>{
+    <span class="hljs-keyword">int</span> ans1=<span class="hljs-number">0</span>,ans2=<span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span>(r-l&gt;<span class="hljs-number">1</span>)
+    {
+        <span class="hljs-keyword">int</span> md=(l+r)/<span class="hljs-number">2</span>;
+        <span class="hljs-keyword">if</span>(a[md]&gt;=x)
+        {
+            r=md;
+        }
+        <span class="hljs-keyword">if</span>(a[md]&lt;x)
+        {
+            l=md;
+        }
+    }
+    ans1=a[l];
+    ans2=a[l+<span class="hljs-number">1</span>];
+    <span class="hljs-keyword">if</span>(x-ans1&lt;=ans2-x)
+    {
+        <span class="hljs-keyword">return</span> ans1;
+    }
+    <span class="hljs-keyword">return</span> ans2;
+}
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;n);
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++)
+    {
+        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;a[i]);
+    }
+    a[<span class="hljs-number">0</span>]=<span class="hljs-number">-1000000000</span>;
+    a[n+<span class="hljs-number">1</span>]=<span class="hljs-number">2147483647</span>;
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;m);
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;m;i++)
+    {
+        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;x);
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>,bf(<span class="hljs-number">0</span>,n));
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="../../dp/" class="navigation navigation-next navigation-unique" aria-label="Next page: 动态规划">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"查找最接近的元素","level":"1.2.1.1","depth":3,"next":{"title":"动态规划","level":"1.3","depth":1,"path":"dp/README.md","ref":"dp/README.md","articles":[{"title":"最长不降子序列","level":"1.3.1","depth":2,"ref":"","articles":[{"title":"最长不降子序列","level":"1.3.1.1","depth":3,"path":"dp/最长不降子序列/最长不降子序列.md","ref":"dp/最长不降子序列/最长不降子序列.md","articles":[]}]},{"title":"GitBook is nice","level":"1.3.2","depth":2,"path":"part1/gitbook.md","ref":"part1/gitbook.md","articles":[]}]},"previous":{"title":"二分查找","level":"1.2.1","depth":2,"ref":"","articles":[{"title":"查找最接近的元素","level":"1.2.1.1","depth":3,"path":"分治/二分查找/查找最接近的元素.md","ref":"分治/二分查找/查找最接近的元素.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"分治/二分查找/查找最接近的元素.md","mtime":"2019-04-22T03:19:47.776Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-22T03:29:05.457Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
